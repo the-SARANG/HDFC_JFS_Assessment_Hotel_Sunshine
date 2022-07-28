@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hotel SunShine</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=|Roboto+Sans:400,700|Playfair+Display:400,700">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+    
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    
+    <header class="site-header js-site-header">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-6 col-lg-4 site-logo" data-aos="fade"><a href="index.html">Hotel SunShine</a></div>
+          <div class="col-6 col-lg-8">
+
+
+            <div class="site-menu-toggle js-site-menu-toggle"  data-aos="fade">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <!-- END menu-toggle -->
+
+            <div class="site-navbar js-site-navbar">
+              <nav role="navigation">
+                <div class="container">
+                  <div class="row full-height align-items-center">
+                    <div class="col-md-6 mx-auto">
+                      <ul class="list-unstyled menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="rooms.html">Rooms</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="active"><a href="reservation.html">Reservation</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- END head -->
+
+    <section class="site-hero inner-page overlay" style="background-image: url(images/hero_2.jpg)" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row site-hero-inner justify-content-center align-items-center">
+          <div class="col-md-10 text-center" data-aos="fade">
+            <img src="images/logo.webp" width="70px" height="70px">
+            <h2 class="heading mb-3">Reservation Form</h2>
+          </div>
+        </div>
+      </div>
+    <!-- END section -->
+
+    <section class="section contact-section" id="next">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+            
+            <form name="reservationForm" action="#" method="post" class="bg-white p-md-5 p-4 mb-5 border">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label class="text-black font-weight-bold" for="name">Name</label>
+                  <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label class="text-black font-weight-bold" for="phone">Phone</label>
+                  <input type="text" id="phone" class="form-control" required>
+                </div>
+                <div class="col-md-8 form-group">
+                  <label class="text-black font-weight-bold" for="phone">Email Address</label>
+                  <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="dropdown form-group">
+                  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Rooms
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Single Room</a></li>
+                      <li><a href="#">Family Room</a></li>
+                      <li><a href="#">Luxary Room</a></li>
+                    </ul>
+                    </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label class="text-black font-weight-bold" for="checkin_date">Date Check In</label>
+                  <input type="text" id="checkin_date" class="form-control">
+                </div>
+                <div class="col-md-6 form-group">
+                  <label class="text-black font-weight-bold" for="checkout_date">Date Check Out</label>
+                  <input type="text" id="checkout_date" class="form-control">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="adults" class="font-weight-bold text-black">Adults</label>
+                  <div class="field-icon-wrap">
+                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                    <select name="" id="adults" class="form-control">
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4+</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="children" class="font-weight-bold text-black">Children</label>
+                  <div class="field-icon-wrap">
+                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                    <select name="" id="children" class="form-control">
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4+</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="submit" value="Click to Confirm" onclick="validate()" class="btn btn-primary text-white py-3 px-5 font-weight-bold">
+                  <input type="button" value="Reserve Now" onclick="reserve()" class="btn btn-success text-white py-3 px-5 font-weight-bold">
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="section footer-section">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-md-3 mb-5">
+            <ul class="list-unstyled link">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+             <li><a href="rooms.html">Rooms</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5 pr-md-5 contact-info">
+            
+            <p><span class="d-block"><span class="ion-ios-location h5 mr-3 text-primary"></span>Address:</span> <span>  Dapoli, Maharashtra</span></p>
+            <p><span class="d-block"><span class="ion-ios-telephone h5 mr-3 text-primary"></span>Phone:</span> <span> (+91) 7894561320</span></p>
+            <p><span class="d-block"><span class="ion-ios-email h5 mr-3 text-primary"></span>Email:</span> <span>  hotel@sunshine.com</span></p>
+          </div>
+          <div class="col-md-3 mb-5">
+            <p>Sign up for our newsletter</p>
+            <form action="#" class="footer-newsletter">
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email...">
+                <button type="submit" class="btn"><span class="fa fa-paper-plane"></span></button>
+              </div>
+            </form>
+          </div>
+        </div>
+            
+          <p class="col-md-4">
+            <a href="#"><span class="fa fa-facebook"></span></a>
+            <a href="#"><span class="fa fa-twitter"></span></a>
+            <a href="#"><span class="fa fa-instagram"></span></a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function reserve() {
+        alert("Reservation is Successfull!!!");
+      }
+
+    function validate(){  
+      var name=document.reservationForm.name.value;  
+      var phone=document.reservationForm.phone.value;
+      var email=document.reservationForm.email.value;      
+      if (name==null || name=="" || !isNaN(name)){  
+        alert("Please Enter the Name in the Text-Format");
+      }
+      else if(phone==null || phone=="" || isNaN(phone) || phone.length!=10)
+      {  
+        alert("Please Enter the Phone No. in correct format");  
+        return false;  
+      }
+      else if (email==null || email==""){  
+        alert("Please Enter the Email ID.");  
+      }
+      else{
+      alert("The Information is Saved!");
+      }
+    }  
+
+
+
+
+      // var n = document.getElementById('name')
+      // if(typeof n != 'string'){
+      //   window.alert("Enter the Text Only");
+      // }
+
+    </script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script> 
+    <script src="js/jquery.timepicker.min.js"></script> 
+    <script src="js/main.js"></script>
+  </body>
+</html>
