@@ -210,6 +210,14 @@
       else{
       alert("The Information is Saved!");
       }
+      else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+      {
+        alert("Entered correct email address");
+      }
+      else{
+        alert("You have entered an invalid email address!")
+        return (false);
+      }
     }  
 
 
