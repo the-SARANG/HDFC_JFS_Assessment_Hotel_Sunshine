@@ -199,6 +199,9 @@
       if (name==null || name=="" || !isNaN(name)){  
         alert("Please Enter the Name in the Text-Format");
       }
+      else if(!/^[A-Za-z\s]+$/.test(name)){
+        alert("Please Enter the Name in the Text-Format");
+      }
       else if(phone==null || phone=="" || isNaN(phone) || phone.length!=10)
       {  
         alert("Please Enter the Phone No. in correct format");  
