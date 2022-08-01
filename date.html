@@ -1,0 +1,241 @@
+<html>
+    <head>
+        <title>Hotel SunShine</title> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Bootstrap Elegant Modal Login Modal Form with Avatar Icon</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link href="https://code.jquery.com/ui/1.12.1/themes/black-tie/jquery-ui.css" rel="stylesheet">
+        <script>
+            $(document).ready(function(){
+            var minDate= new Date();
+            $("#checkin_date").datepicker({
+            numberOfMonth: 1,
+            dateFormat: 'dd/MM/yy',
+            minDate: minDate,
+            onClose: function(selectedDate){
+                $("#checkout_date").datepicker("option","minDate",selectedDate);
+            }
+            });
+            $("#checkout_date").datepicker({
+            numberOfMonth: 1,
+            dateFormat: 'dd/MM/yy',
+            minDate: minDate,
+            onClose: function(selectedDate){
+                $("#checkin_date").datepicker("option","minDate");
+            }
+            });
+        });
+        </script>
+        <script>
+            function msg(){
+                var date1 = document.getElementById('checkin_date').value;
+                var date2 = document.getElementById('checkout_date').value;
+                if(date1==null || date1==""){
+                    alert("Please select CheckIn Date");
+                }
+                else if(date2==null || date2==""){
+                    alert("Please select CheckOut Date");
+                }
+                else if(date2==null || date2=="" && date1==null || date1==""){
+                    alert("Please select CheckIn and CheckOut Date");
+                }
+                // else if(getValue==null || getValue==""){
+                //     alert(getValue);
+                //     alert("Please select Room");
+                // }
+                // else if(children==0 && adults==0){
+                //     alert("Please Select at least children or adults");
+                // }
+                else{
+                alert("Rooms are available, Click Ok to Continue.");
+                }
+            }
+        </script>
+
+        <style>
+        body {
+            font-family: 'Varela Round', sans-serif;
+            background-image: url(images/hero_4.jpg);
+        }
+        .modal-login {		
+            color: #636363;
+            width: 350px;
+        }
+        .modal-login .modal-content {
+            padding: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+        .modal-login .modal-header {
+            border-bottom: none;   
+            position: relative;
+            justify-content: center;
+        }
+        .modal-login h4 {
+            text-align: center;
+            font-size: 26px;
+            margin: 30px 0 -15px;
+        }
+        .modal-login .form-control:focus {
+            border-color: #70c5c0;
+        }
+        .modal-login .form-control, .modal-login .btn {
+            min-height: 40px;
+            border-radius: 3px; 
+        }
+        .modal-login .close {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }	
+        .modal-login .modal-footer {
+            background: #ecf0f1;
+            border-color: #dee4e7;
+            text-align: center;
+            justify-content: center;
+            margin: 0 -20px -20px;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+        .modal-login .modal-footer a {
+            color: #999;
+        }		
+        .modal-login .avatar {
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: -70px;
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            z-index: 9;
+            background: #60c7c1;
+            padding: 15px;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+        .modal-login .avatar img {
+            width: 100%;
+        }
+        .modal-login.modal-dialog {
+            margin-top: 80px;
+        }
+        .modal-login .btn, .modal-login .btn:active {
+            color: #fff;
+            border-radius: 4px;
+            background: #60c7c1 !important;
+            text-decoration: none;
+            transition: all 0.4s;
+            line-height: normal;
+            border: none;
+        }
+        .modal-login .btn:hover, .modal-login .btn:focus {
+            background: #45aba6 !important;
+            outline: none;
+        }
+        .trigger-btn {
+            display: inline-block;
+            margin: 100px auto;
+        }
+        .container{
+            width: 40%;
+            height: 70%;
+        }
+        #head{
+            text-align: center;
+        }
+        </style>
+
+        
+<section>
+  <div class="container">
+    <h2 id="head">Check Availablity</h2>
+            <form action="" method="post">
+                <div class="form-group">
+                    <label class="font-weight-bold text-black">Check In</label>
+                    <input type="text" class="form-control" id="checkin_date" name="checkin_date" required>		
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-bold text-black">Check Out</label>
+                    <input type="text" class="form-control" id="checkout_date" name="checkout_date" required>	
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-bold text-black">Rooms</label>
+                    <div class="field-icon-wrap">
+                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                        <select name="" id="rooms" class="form-control">
+                            <option value="">Select</option>
+                          <option value="">Single Room</option>
+                          <option value="">Family Room</option>
+                          <option value="">Luxary Room</option>
+                        </select>
+                      </div>	
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-bold text-black">Adults</label>
+                    <div class="field-icon-wrap">
+                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                        <select name="" id="adults" class="form-control">
+                          <option value="">0</option>
+                          <option value="">1</option>
+                          <option value="">2</option>
+                          <option value="">3</option>
+                          <option value="">4+</option>
+                        </select>
+                      </div>	
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-bold text-black">Children</label>
+                    <div class="field-icon-wrap">
+                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                        <select name="" id="children" class="form-control">
+                          <option value="">0</option>
+                          <option value="">1</option>
+                          <option value="">2</option>
+                          <option value="">3</option>
+                          <option value="">4+</option>
+                        </select>
+                      </div>	
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-warning" onclick="msg()">Check</button>
+                    <button type="button" class="btn btn-warning" onclick="window.location='rooms.html'">Rooms</button>	
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-warning" onclick="window.location='index.html'">Back</button>
+                    <button type="button" class="btn btn-warning" onclick="window.location='reservation.html'">Reservation</button>	
+                </div>
+        </form>
+    </div>
+ </section>   <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=|Roboto+Sans:400,700|Playfair+Display:400,700">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css"> -->
+        
+        <!-- As a heading
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Navbar</span>
+            </div> -->
+        <!-- </nav> -->
+        <!-- <form action="" method="post">
+            <input type="text" id="checkin_date">
+            <input type="text" id="checkout_date">    
+        </form> -->
+    </body>
+</html>
